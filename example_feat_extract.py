@@ -144,16 +144,16 @@ if __name__ == "__main__":
     )
 
     # Print the network summary, use these layer names for feature extraction
-    #feature_extractor.print_network_summary()
+    feature_extractor.print_network_summary()
 
-    # Feature extraction example using a filename queue to feed images
-    feature_dataset = feature_extraction_queue(
-        feature_extractor, args.image_path, layer_names,
-        args.batch_size, args.num_classes)
-
-    # Write features to disk as HDF5 file
-    utils.write_hdf5(args.out_file, layer_names, feature_dataset)
-    print("Successfully written features to: {}".format(args.out_file))
+    # # Feature extraction example using a filename queue to feed images
+    # feature_dataset = feature_extraction_queue(
+    #     feature_extractor, args.image_path, layer_names,
+    #     args.batch_size, args.num_classes)
+    #
+    # # Write features to disk as HDF5 file
+    # utils.write_hdf5(args.out_file, layer_names, feature_dataset)
+    # print("Successfully written features to: {}".format(args.out_file))
 
     # Close the threads and close session.
     feature_extractor.close()
